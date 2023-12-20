@@ -1,5 +1,5 @@
 // variables generales
-var myArray = ["Rock", "Paper", "Scissors"];
+var myArray = ['Rock', 'Paper', 'Scissors'];
 
 var rand ="";
 
@@ -20,23 +20,41 @@ function playRound (playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         ties++;
         alert("Game Tie");
-    } else if (playerSelection == "rock" && computerSelection == "paper"){
+    } else if (playerSelection == 'rock' && computerSelection == 'paper'){
         computerWins++;
         alert("You lose! Paper beats Rock");   
-    } else if (playerSelection == "rock" && computerSelection == "scissors"){
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
         playerWins++;
         alert ("You WIN! Scissors beats Scissors");
-    } else if (playerSelection == "paper" && computerSelection == "scissors"){
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
         computerWins++;
         alert("You los! Scisors beats Paper");
-    } else if ( playerSelection == "paper" && computerSelection == "rock"){
+    } else if ( playerSelection == 'paper' && computerSelection == 'rock'){
         playerWins++;
         alert ("You WIN! Paper beats Rock");
-    } else if (playerSelection == "scissors" && computerSelection == "rock"){
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
         computerWins++;
         alert("You Lose! Rock beats Scissors");
-    } else if (playerSelection == "scissors" && computerSelection == "paper"){
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
         playerWins++;
         alert ("You WIN! Scissors beats Paper");
     }
 };
+
+// Funcion Game
+function game(){
+    for (let i = 0; i < 5; i++){
+
+        var computerSelection = getComputerChoice();
+        var playerSelection = prompt ("Choose: 'Rock', 'Paper' or 'Scissors': ");
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = computerSelection.toLowerCase();
+        if (playerSelection == " "){ // para ver como cuenta
+            alert ("You should write Rock, Paper or Scissors");
+        }else{
+            playRound(playerSelection, computerSelection);
+            round++;
+            console.log("This is the round number: " + round);
+        }
+    }
+}
