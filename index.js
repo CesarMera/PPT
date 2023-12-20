@@ -1,4 +1,4 @@
-
+// variables generales
 var myArray = ["Rock", "Paper", "Scissors"];
 
 var rand ="";
@@ -8,12 +8,14 @@ function getComputerChoice(){
     return rand;
 }
 
+// variables declaradas
 var playerWins = 0;
 var computerWins = 0;
 var wins = 5;
 var round = 0;
 var ties = 0;
 
+// funcion de trabajo
 function playRound (playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         ties++;
