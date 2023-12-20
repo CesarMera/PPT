@@ -46,7 +46,7 @@ function game(){
     for (let i = 0; i < 5; i++){
 
         var computerSelection = getComputerChoice();
-        var playerSelection = prompt ("Elije: 'Piedra', 'Papel' o 'Tijeras': ");
+        var playerSelection = prompt ("Elije: 'Piedra', 'Papel' o 'Tijeras' ");
         playerSelection = playerSelection.toLowerCase();
         computerSelection = computerSelection.toLowerCase();
         if (playerSelection == " "){ // para ver como cuenta
