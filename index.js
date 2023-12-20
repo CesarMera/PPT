@@ -1,5 +1,5 @@
 // variables generales
-var myArray = ['Rock', 'Paper', 'Scissors'];
+var myArray = ['Piedra', 'Papel', 'Tijeras'];
 
 var rand ="";
 
@@ -19,25 +19,25 @@ var ties = 0;
 function playRound (playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         ties++;
-        alert("Game Tie");
-    } else if (playerSelection == 'rock' && computerSelection == 'paper'){
+        alert("Empate...!");
+    } else if (playerSelection == 'piedra' && computerSelection == 'papel'){
         computerWins++;
-        alert("You lose! Paper beats Rock");   
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+        alert("Perdiste, papel gana a piedra");   
+    } else if (playerSelection == 'piedra' && computerSelection == 'tijeras'){
         playerWins++;
-        alert ("You WIN! Scissors beats Scissors");
-    } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
+        alert ("Ganaste...!, piedra le gana a tijeras ");
+    } else if (playerSelection == 'papel' && computerSelection == 'tijeras'){
         computerWins++;
-        alert("You los! Scisors beats Paper");
-    } else if ( playerSelection == 'paper' && computerSelection == 'rock'){
+        alert("Perdiste, tijeras le gana a papel");
+    } else if ( playerSelection == 'papel' && computerSelection == 'piedra'){
         playerWins++;
-        alert ("You WIN! Paper beats Rock");
-    } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+        alert ("Ganaste....! papel vence a piedra");
+    } else if (playerSelection == 'tijeras' && computerSelection == 'piedra'){
         computerWins++;
-        alert("You Lose! Rock beats Scissors");
-    } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+        alert("Perdiste, piedra le gana a tijeras");
+    } else if (playerSelection == 'tijeras' && computerSelection == 'papel'){
         playerWins++;
-        alert ("You WIN! Scissors beats Paper");
+        alert ("Ganaste...! tijeras le gana a piedra");
     }
 };
 
@@ -46,24 +46,24 @@ function game(){
     for (let i = 0; i < 5; i++){
 
         var computerSelection = getComputerChoice();
-        var playerSelection = prompt ("Choose: 'Rock', 'Paper' or 'Scissors': ");
+        var playerSelection = prompt ("Elije: 'Piedra', 'Papel' o 'Tijeras': ");
         playerSelection = playerSelection.toLowerCase();
         computerSelection = computerSelection.toLowerCase();
         if (playerSelection == " "){ // para ver como cuenta
-            alert ("You should write Rock, Paper or Scissors");
+            alert ("Deberias escribir Piedra, Papel o Tijera ");
         }else{
             playRound(playerSelection, computerSelection);
             round++;
-            console.log("This is the round number: " + round);
+            console.log("Esta es la ronda numero: " + round);
         }
     }
 
     if (playerWins > computerWins){
-        alert("Player WIN");
+        alert("GANASTE....!");
     } else if (playerWins < computerWins){
-        alert("Computer BEATS you!");
+        alert("Te ganó la computadora");
     } else if(playerWins == computerWins){
-        alert("Game Tie");
+        alert("Empate");
     }
     alert(" Player Wins: " + playerWins + ", Computer Wins: " + computerWins + ", Games Ties: " + ties)
 }
