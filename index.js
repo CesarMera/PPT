@@ -57,4 +57,15 @@ function game(){
             console.log("This is the round number: " + round);
         }
     }
+
+    if (playerWins > computerWins){
+        alert("Player WIN");
+    } else if (playerWins < computerWins){
+        alert("Computer BEATS you!");
+    } else if(playerWins == computerWins){
+        alert("Game Tie");
+    }
+    alert(" Player Wins: " + playerWins + ", Computer Wins: " + computerWins + ", Games Ties: " + ties)
 }
+
+game();
